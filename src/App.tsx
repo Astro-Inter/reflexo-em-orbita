@@ -279,7 +279,7 @@ export function App() {
       <header className="topbar">
         <img
           className="brand"
-          src="/assets/astro-planet-icon.png"
+          src={`${import.meta.env.BASE_URL}assets/astro-planet-icon.png`}
           alt="Ícone do planeta Astro"
           width="48"
           height="40"
