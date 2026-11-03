@@ -28,6 +28,7 @@ import {
 import type { RankingEntry } from "./game/ranking";
 import { GameAudio } from "./game/audio";
 import type { Phase } from "./game/engine";
+import planetLogo from "./assets/astro-planet-icon.png";
 
 const difficultyIds: DifficultyId[] = ["moon", "sun", "astro"];
 
@@ -279,7 +280,7 @@ export function App() {
       <header className="topbar">
         <img
           className="brand"
-          src={`${import.meta.env.BASE_URL}assets/astro-planet-icon.png`}
+          src={planetLogo}
           alt="Ícone do planeta Astro"
           width="48"
           height="40"
