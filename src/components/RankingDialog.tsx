@@ -5,7 +5,6 @@ import {
   type FormEvent,
   type ReactNode,
 } from "react";
-import { DIFFICULTIES } from "../game/engine";
 import type { DifficultyId } from "../game/engine";
 import type { RankingEntry } from "../game/ranking";
 
@@ -110,11 +109,6 @@ export function RankingDialog({
             <span className="ranking-place">{index + 1}º</span>
             <span className="ranking-player">
               <strong>{entry.name}</strong>
-              <small>
-                {entry.difficulty
-                  ? DIFFICULTIES[entry.difficulty].name
-                  : "Recorde inicial"}
-              </small>
             </span>
             <span className="ranking-time">
               {entry.milliseconds}<small>ms</small>
@@ -181,13 +175,11 @@ export function RankingDialog({
 
 export function RecordNameDialog({
   milliseconds,
-  difficulty,
   position,
   onSave,
   onClose,
 }: SharedProps & {
   milliseconds: number;
-  difficulty: DifficultyId;
   position: number;
   onSave: (name: string) => void;
 }) {
@@ -200,7 +192,7 @@ export function RecordNameDialog({
     <DialogShell
       onClose={onClose}
       title={`Você entrará em ${position}º lugar!`}
-      subtitle={`Registre seu tempo de ${milliseconds} ms no nível ${DIFFICULTIES[difficulty].name}.`}
+      subtitle={`Registre seu tempo de ${milliseconds} ms no ranking.`}
     >
       <form className="ranking-name-form" onSubmit={submit}>
         <label htmlFor="ranking-player-name">Nome para o ranking</label>

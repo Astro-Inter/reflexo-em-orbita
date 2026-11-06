@@ -21,7 +21,7 @@ export const WIN_THRESHOLD_MS = 273;
 export const FEEDBACK_MS = 1500;
 export const DIFFICULTIES = {
   moon: { name: "LUA", label: "Fácil", thresholdMs: 280 },
-  sun: { name: "SOL", label: "Médio", thresholdMs: 250 },
+  sun: { name: "SOL", label: "Médio", thresholdMs: 300 },
   astro: { name: "ASTRO", label: "Difícil", thresholdMs: 230 },
 } as const;
 export type DifficultyId = keyof typeof DIFFICULTIES;

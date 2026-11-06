@@ -30,7 +30,6 @@ import { GameAudio } from "./game/audio";
 import type { Phase } from "./game/engine";
 import planetLogo from "./assets/astro-planet-icon.png";
 
-const difficultyIds: DifficultyId[] = ["moon", "sun", "astro"];
 
 export function App() {
   const [engine] = useState(() => new ReactionEngine(browserScheduler));
@@ -48,7 +47,7 @@ export function App() {
   const [full, setFull] = useState(false);
   const [fullscreenError, setFullscreenError] = useState("");
   const [soundEnabled, setSoundEnabled] = useState(true);
-  const [difficulty, setDifficulty] = useState<DifficultyId>("sun");
+  const difficulty: DifficultyId = "sun";
   const [ranking, setRanking] = useState<RankingEntry[]>(readRanking);
   const [rankingOpen, setRankingOpen] = useState(false);
   const [pendingRecord, setPendingRecord] = useState<{
@@ -320,32 +319,6 @@ export function App() {
       </header>
       <section className="mission" aria-labelledby="game-title">
         <div className="intro">
-          <div
-            className="difficulty-picker"
-            role="group"
-            aria-label="Nível de dificuldade"
-          >
-            {difficultyIds.map((id) => {
-              const option = DIFFICULTIES[id];
-              return (
-                <button
-                  key={id}
-                  className="difficulty-option"
-                  type="button"
-                  data-control
-                  aria-pressed={difficulty === id}
-                  disabled={phase !== "IDLE"}
-                  onClick={(event) => {
-                    setDifficulty(id);
-                    event.currentTarget.blur();
-                  }}
-                >
-                  <span>{option.name}</span>
-                  <small>{option.label}</small>
-                </button>
-              );
-            })}
-          </div>
           <h1 id="game-title">
             Reflexo em <em>Órbita</em>
           </h1>
@@ -499,7 +472,6 @@ export function App() {
       {pendingRecord?.visible && (
         <RecordNameDialog
           milliseconds={pendingRecord.milliseconds}
-          difficulty={pendingRecord.difficulty}
           position={pendingRecord.position}
           onSave={saveName}
           onClose={closeNameEntry}

@@ -21,7 +21,7 @@ npm run preview
 
 ## Como jogar
 
-- Escolha **LUA** (fácil, 280 ms), **SOL** (médio, 250 ms) ou **ASTRO** (difícil, 230 ms).
+- Reaja em menos de **300 ms** para vencer.
 - Comece com Espaço ou tocando/clicando na tela. Faça o mesmo quando o sinal aparecer.
 - A pendência surge entre 2 e 6 segundos. Quando ela for identificada, a tela e o Astrinho ficam vermelhos; reaja em menos que o limite escolhido.
 - Cada partida tem até três chances. Uma vitória encerra a partida imediatamente.
