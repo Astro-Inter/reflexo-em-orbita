@@ -21,7 +21,7 @@ npm run preview
 
 ## Como jogar
 
-- Reaja em menos de **400 ms** para vencer.
+- Reaja em menos de **350 ms** para vencer.
 - Comece com Espaço ou tocando/clicando na tela. Faça o mesmo quando o sinal aparecer.
 - A pendência surge entre 2 e 6 segundos. Quando ela for identificada, a tela e o Astrinho ficam vermelhos; reaja em menos que o limite escolhido.
 - Cada partida tem até três chances. Uma vitória encerra a partida imediatamente.
